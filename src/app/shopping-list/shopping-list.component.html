@@ -1,31 +1,31 @@
 <div class="container">
-  <h1>Shopping List</h1>
+  <h1>Lista de Compras</h1>
 
   <div class="form-container">
-    <input type="text" [(ngModel)]="newItem" placeholder="Add item" />
-    <button (click)="addItem()">Add</button>
+    <input type="text" [(ngModel)]="newItem" placeholder="Adicionar item" />
+    <button (click)="addItem()">Adicionar</button>
   </div>
 
   <div class="shopping-list">
-    <h2>To Buy</h2>
+    <h2>A Comprar</h2>
     <ul>
       <li *ngFor="let item of getUnpurchasedItems(); let i = index">
         <span *ngIf="!item.editing" [class.purchased]="item.purchased">{{ item.name }}</span>
         <input *ngIf="item.editing" type="text" [(ngModel)]="item.name" (blur)="stopEditing(item)" />
 
-        <button (click)="togglePurchased(item)">Mark as Purchased</button>
+        <button (click)="togglePurchased(item)">Marcar como Comprado</button>
         <button (click)="deleteItem(i)">🗑</button>
         <button (click)="startEditing(item)">✏️</button>
       </li>
     </ul>
 
-    <h2>Purchased</h2>
+    <h2>Comprados</h2>
     <ul>
       <li *ngFor="let item of getPurchasedItems(); let i = index">
         <span *ngIf="!item.editing" [class.purchased]="item.purchased">{{ item.name }}</span>
         <input *ngIf="item.editing" type="text" [(ngModel)]="item.name" (blur)="stopEditing(item)" />
 
-        <button (click)="togglePurchased(item)">Mark as Unpurchased</button>
+        <button (click)="togglePurchased(item)">Marcar como Não Comprado</button>
         <button (click)="deleteItem(i)">🗑</button>
         <button (click)="startEditing(item)">✏️</button>
       </li>
