@@ -14,7 +14,7 @@
         <input *ngIf="item.editing" type="text" [(ngModel)]="item.name" (blur)="stopEditing(item)" />
 
         <button (click)="togglePurchased(item)">Marcar como Comprado</button>
-        <button (click)="deleteItem(i)">🗑</button>
+        <button (click)="deleteItem(item)">🗑</button> <!-- Alterado aqui -->
         <button (click)="startEditing(item)">✏️</button>
       </li>
     </ul>
@@ -26,9 +26,10 @@
         <input *ngIf="item.editing" type="text" [(ngModel)]="item.name" (blur)="stopEditing(item)" />
 
         <button (click)="togglePurchased(item)">Marcar como Não Comprado</button>
-        <button (click)="deleteItem(i)">🗑</button>
+        <button (click)="deleteItem(item)">🗑</button> <!-- Alterado aqui -->
         <button (click)="startEditing(item)">✏️</button>
       </li>
     </ul>
   </div>
+
 </div>

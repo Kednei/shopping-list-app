@@ -26,9 +26,13 @@ export class ShoppingListComponent {
     }
   }
 
-  deleteItem(index: number) {
-    this.shoppingList.splice(index, 1);
+  deleteItem(item: ShoppingItem) {
+    const index = this.shoppingList.indexOf(item);
+    if (index !== -1) {
+      this.shoppingList.splice(index, 1);
+    }
   }
+
 
   togglePurchased(item: ShoppingItem) {
     item.purchased = !item.purchased;
